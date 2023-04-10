@@ -1,6 +1,6 @@
 package com.yashen.d24_hostel.view.tm;
 
-import com.yashen.d24_hostel.dto.RoomTypeDto;
+import com.yashen.d24_hostel.dto.RoomDto;
 import com.yashen.d24_hostel.dto.StudentDto;
 import javafx.scene.control.Button;
 import lombok.AllArgsConstructor;
@@ -15,7 +15,7 @@ import java.sql.Date;
 public class ResevationTM {
     private int no;
     private StudentDto student;
-    private RoomTypeDto roomType;
+    private RoomDto roomType;
     private Date date;
     private String status;
     private Button option;

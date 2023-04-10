@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-public class Room {
+public class Room implements SuperEntity{
     @Id
     @GeneratedValue(
             strategy = GenerationType.IDENTITY

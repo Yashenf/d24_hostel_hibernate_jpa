@@ -14,7 +14,7 @@ import java.util.List;
 @Setter
 @ToString
 @Entity
-public class Student {
+public class Student implements SuperEntity{
     @Id
     private String nic;
     @Embedded

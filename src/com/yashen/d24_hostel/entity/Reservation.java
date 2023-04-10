@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Setter
 @ToString
 @Entity
-public class Reservation {
+public class Reservation implements SuperEntity {
     @Id
     private int resId;
     private LocalDate date;
