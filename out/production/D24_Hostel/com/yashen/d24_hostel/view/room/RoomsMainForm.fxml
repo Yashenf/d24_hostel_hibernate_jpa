@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="280.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yashen.d24_hostel.controller.room.RoomsMainFormController">
+   <children>
+      <Label layoutX="8.0" layoutY="18.0" text="Rooms Managements" />
+      <Button layoutX="281.0" layoutY="14.0" mnemonicParsing="false" onAction="#addNewRoomOnAction" prefHeight="25.0" prefWidth="116.0" text="Add New Room">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="280.0" layoutY="51.0" mnemonicParsing="false" onAction="#updateRoomOnAction" prefHeight="25.0" prefWidth="116.0" text="Update Details">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <ComboBox fx:id="roomtypeCmb" layoutX="154.0" layoutY="14.0" onAction="#roomtypeCmbOnAction" prefHeight="25.0" prefWidth="116.0" promptText="Room Type" />
+      <TextField fx:id="searchRoomTxt" layoutX="4.0" layoutY="50.0" onAction="#searchRoomTxtOnAction" prefHeight="25.0" prefWidth="266.0" promptText="Search here" />
+      <Separator layoutX="14.0" layoutY="90.0" prefHeight="0.0" prefWidth="373.0" />
+      <TableView fx:id="roomTbl" layoutX="5.0" layoutY="87.0" prefHeight="186.0" prefWidth="392.0">
+        <columns>
+          <TableColumn fx:id="noCol" prefWidth="51.0" text="No" />
+            <TableColumn fx:id="roomTypeCol" prefWidth="78.0" text="Type" />
+            <TableColumn fx:id="keyMoneyCol" prefWidth="73.0" text="Key money" />
+            <TableColumn fx:id="roomQtyCol" prefWidth="49.0" text="Qty" />
+            <TableColumn fx:id="avalableQtyCol" minWidth="0.0" prefWidth="60.0" text="Avalables" />
+            <TableColumn fx:id="optionsCol" prefWidth="114.0" text="Options" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

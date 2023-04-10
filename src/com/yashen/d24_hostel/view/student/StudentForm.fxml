@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="context" prefHeight="280.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yashen.d24_hostel.controller.student.StudentFormController">
+   <children>
+      <TableView fx:id="studentTbl" layoutX="14.0" layoutY="100.0" prefHeight="180.0" prefWidth="400.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="noCol" prefWidth="58.0" text="No" />
+          <TableColumn fx:id="nameCol" prefWidth="97.0" text="Name" />
+            <TableColumn fx:id="nicCol" prefWidth="96.0" text="NIC No" />
+            <TableColumn fx:id="mobileCol" minWidth="0.0" prefWidth="84.0" text="Mobile" />
+            <TableColumn fx:id="optionCol" prefWidth="108.0" text="Option" />
+        </columns>
+      </TableView>
+      <TextField fx:id="searchTxt" layoutX="14.0" layoutY="60.0" onKeyPressed="#searchStudentOnAction" prefHeight="25.0" prefWidth="281.0" promptText="Search Here" AnchorPane.leftAnchor="0.0" />
+      <Button layoutX="299.0" layoutY="28.0" mnemonicParsing="false" onAction="#newStudentOnAction" prefHeight="25.0" prefWidth="95.0" text="New Student" AnchorPane.leftAnchor="299.0" AnchorPane.topAnchor="28.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="299.0" layoutY="60.0" mnemonicParsing="false" onAction="#updateStudentOnAction" prefHeight="25.0" prefWidth="95.0" text="UpdateStudent" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="60.0">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Text layoutX="23.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Student Managent" wrappingWidth="117.13671875" />
+   </children>
+</AnchorPane>

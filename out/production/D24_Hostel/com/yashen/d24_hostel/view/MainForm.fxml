@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="container" prefHeight="350.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yashen.d24_hostel.controller.MainFormController">
+   <children>
+      <ImageView fitHeight="350.0" fitWidth="550.0" layoutY="-26.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../assets/img/5559852.jpg" />
+         </image>
+      </ImageView>
+      <Separator layoutX="234.0" layoutY="14.0" orientation="VERTICAL" prefHeight="328.0" prefWidth="0.0" />
+      <Text fill="WHITE" layoutX="38.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="D24 Hostel" wrappingWidth="178.13671875">
+         <font>
+            <Font name="Arial Bold" size="36.0" />
+         </font>
+      </Text>
+      <PasswordField fx:id="passwordTxt" layoutX="283.0" layoutY="178.0" onAction="#passwordTxtOnAction" prefHeight="26.0" prefWidth="206.0" promptText="Password" />
+      <Button layoutX="283.0" layoutY="252.0" mnemonicParsing="false" onAction="#signInBtnOnAction" prefHeight="32.0" prefWidth="220.0" text="Sign-in">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Text fill="WHITE" layoutX="283.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
+      <ImageView fx:id="showPasswordBtn" fitHeight="18.0" fitWidth="33.0" layoutX="490.0" layoutY="189.0" onDragDetected="#showPasswordBtnOnAction" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/img/5559852.jpg" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Text fill="WHITE" layoutX="14.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="Developed by yashen's company" wrappingWidth="205.99999255500734" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="V 1.0.0 Snapshot" wrappingWidth="141.99220275878906" />
+      <Text fill="#f4f5f5" layoutX="398.0" layoutY="305.0" onMouseClicked="#fogotPasswordOnAction" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="Fogot Password" wrappingWidth="105.13672199845314">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Text>
+      <TextField fx:id="usernameTxt" layoutX="283.0" layoutY="139.0" onAction="#usernameTxtOnAction" prefHeight="26.0" prefWidth="206.0" promptText="Username" />
+   </children>
+</AnchorPane>

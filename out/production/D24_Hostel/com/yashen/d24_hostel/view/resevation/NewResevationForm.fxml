@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="context" prefHeight="220.0" prefWidth="300.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yashen.d24_hostel.controller.resevation.NewResevationFormController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="New Resevation" />
+      <TextField fx:id="nicTxt" layoutX="14.0" layoutY="51.0" prefHeight="25.0" prefWidth="110.0" promptText="NIC No" />
+      <ComboBox fx:id="roomTYpeCmb" layoutX="136.0" layoutY="51.0" prefWidth="150.0" promptText="Room TYpe" />
+      <DatePicker fx:id="datePkr" layoutX="13.0" layoutY="98.0" prefHeight="25.0" prefWidth="121.0" promptText="Date" />
+      <TextField fx:id="statusTxt" layoutX="150.0" layoutY="98.0" prefHeight="25.0" prefWidth="136.0" promptText="Status" />
+      <Button layoutX="22.0" layoutY="172.0" mnemonicParsing="false" onAction="#makeResevationBtnOnAction" prefHeight="25.0" prefWidth="252.0" text="Make Resevation" />
+   </children>
+</AnchorPane>
