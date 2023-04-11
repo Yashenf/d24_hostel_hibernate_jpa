@@ -20,7 +20,7 @@ public class Room implements SuperEntity{
     @Enumerated(
             EnumType.STRING
     )
-    private RoomType roomType;
+    private String roomType;
     private double keyMoney;
     private int qty;
 }

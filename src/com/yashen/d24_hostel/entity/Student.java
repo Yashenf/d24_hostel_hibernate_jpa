@@ -19,8 +19,9 @@ public class Student implements SuperEntity{
     private String nic;
     @Embedded
     private StudentName studentName;
-    @Enumerated(EnumType.STRING)
-    private Gender gender;
+//    @Enumerated(EnumType.STRING)
+//    @Column(nullable = false, columnDefinition = "varchar(255) default 'OTHER'")
+    private String gender;
     private String mobileNo;
     private LocalDate dob;
     private String address;

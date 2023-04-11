@@ -14,4 +14,5 @@ public class ReservationDto {
     private LocalDate date;
     private Student student;
     private Room room;
+    private String status;
 }
