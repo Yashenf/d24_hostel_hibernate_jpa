@@ -8,15 +8,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 public class ResevationTM {
+    private int id;
     private int no;
-    private StudentDto student;
-    private RoomDto roomType;
-    private Date date;
+    private String student;
+    private String roomType;
+    private LocalDate date;
     private String status;
     private Button option;
 }

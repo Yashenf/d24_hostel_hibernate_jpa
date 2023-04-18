@@ -12,9 +12,9 @@
 <AnchorPane fx:id="container" prefHeight="350.0" prefWidth="550.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yashen.d24_hostel.controller.DashBoardController">
    <children>
       <Separator layoutX="14.0" layoutY="52.0" prefHeight="0.0" prefWidth="516.0" />
-      <ImageView fitHeight="47.0" fitWidth="40.0" layoutX="339.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="47.0" fitWidth="40.0" layoutX="339.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/img/5559852.jpg" />
+            <Image url="@../assets/img/istockphoto-1337144146-612x612.jpg" />
          </image>
       </ImageView>
       <Label fx:id="userNameLbl" layoutX="391.0" layoutY="7.0" prefHeight="17.0" prefWidth="132.0" text="Nimal Perera" />
@@ -34,23 +34,23 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="8.0" layoutY="129.0" mnemonicParsing="false" onAction="#studentManagementBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ff7fe1;" text="Student Management">
+      <Button layoutX="8.0" layoutY="129.0" mnemonicParsing="false" onAction="#studentManagementBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ADD8E6;" text="Student Management">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="8.0" layoutY="169.0" mnemonicParsing="false" onAction="#roomsManagementBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ff7fe1;" text="Rooms Management">
+      <Button layoutX="8.0" layoutY="169.0" mnemonicParsing="false" onAction="#roomsManagementBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ADD8E6;" text="Rooms Management">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="8.0" layoutY="245.0" mnemonicParsing="false" onAction="#usersManagemetBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ff7fe1;" text="User Management">
+      <Button layoutX="8.0" layoutY="245.0" mnemonicParsing="false" onAction="#usersManagemetBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ADD8E6;" text="User Management">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <AnchorPane fx:id="containerPane" layoutX="144.0" layoutY="62.0" prefHeight="280.0" prefWidth="400.0" style="-fx-background-color: yellow;" />
-      <Button layoutX="7.0" layoutY="208.0" mnemonicParsing="false" onAction="#resevationsManagementBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ff7fe1;" text="Resevation Management">
+      <AnchorPane fx:id="containerPane" layoutX="144.0" layoutY="62.0" prefHeight="280.0" prefWidth="400.0" style="-fx-background-color: white;" />
+      <Button layoutX="7.0" layoutY="208.0" mnemonicParsing="false" onAction="#resevationsManagementBtnOnAction" prefHeight="25.0" prefWidth="132.0" style="-fx-background-color: #ADD8E6;" text="Resevation Management">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

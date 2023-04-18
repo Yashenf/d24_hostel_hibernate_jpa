@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public User find(Session session, Integer id) {
+    public User find(Session session, String id) {
         try {
             Transaction transaction = session.beginTransaction();
             User user = session.get(User.class, id);
@@ -77,6 +77,23 @@ public class UserDaoImpl implements UserDao {
             Transaction transaction = session.beginTransaction();
             Query<User> query = session.createQuery("from User", User.class);
             usersList = query.getResultList();
+            transaction.commit();
+            return usersList;
+        } catch (Exception e) {
+            throw e;
+        } finally {
+            session.close();
+        }
+    }
+
+    @Override
+    public List<User> findSelectedUserList(Session session, String text) {
+        try {
+            Transaction transaction = session.beginTransaction();
+            Query<User> query = session.createQuery("from User u where u.userName like :userName or u.mobileNumber like :mobile",
+                    User.class).setParameter("userName","%"+text+"%")
+                    .setParameter("mobile","%"+text+"%");
+            List<User> usersList = query.getResultList();
             transaction.commit();
             return usersList;
         } catch (Exception e) {

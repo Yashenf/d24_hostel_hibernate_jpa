@@ -7,13 +7,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="220.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.yashen.d24_hostel.controller.resevation.UpdateResevationFormOnAction">
    <children>
       <Label layoutX="12.0" layoutY="14.0" text="Update Resevation" />
-      <TextField fx:id="nicTxt" layoutX="12.0" layoutY="51.0" prefHeight="25.0" prefWidth="110.0" promptText="NIC No" />
-      <ComboBox fx:id="roomTYpeCmb" layoutX="134.0" layoutY="51.0" prefWidth="150.0" promptText="Room TYpe" />
-      <DatePicker fx:id="datePkr" layoutX="11.0" layoutY="98.0" prefHeight="25.0" prefWidth="121.0" promptText="Date" />
+      <TextField fx:id="nicTxt" disable="true" layoutX="12.0" layoutY="51.0" prefHeight="25.0" prefWidth="110.0" promptText="NIC No" />
+      <ComboBox fx:id="roomTYpeCmb" disable="true" layoutX="134.0" layoutY="51.0" prefWidth="150.0" promptText="Room TYpe" />
+      <DatePicker fx:id="datePkr" disable="true" layoutX="11.0" layoutY="98.0" prefHeight="25.0" prefWidth="121.0" promptText="Date" />
       <TextField fx:id="statusTxt" layoutX="148.0" layoutY="98.0" prefHeight="25.0" prefWidth="136.0" promptText="Status" />
       <Button layoutX="20.0" layoutY="172.0" mnemonicParsing="false" onAction="#updateResevationBtnOnAction" prefHeight="25.0" prefWidth="252.0" text="Update" />
    </children>

@@ -7,24 +7,25 @@ import com.yashen.d24_hostel.dao.custom.impl.StudentDaoImpl;
 import com.yashen.d24_hostel.dao.custom.impl.UserDaoImpl;
 
 public class DaoFactory {
-    private static  DaoFactory daoFactory;
+    private static DaoFactory daoFactory;
 
-    private DaoFactory(){}
-
-    public static DaoFactory getDaoFactory(){  //getInstance
-        return daoFactory == null ? (daoFactory= new DaoFactory()):daoFactory;
+    private DaoFactory() {
     }
 
-    public SuperDao getDao(DaoTypes daoType){
-        switch (daoType){
+    public static DaoFactory getDaoFactory() {  //getInstance
+        return daoFactory == null ? (daoFactory = new DaoFactory()) : daoFactory;
+    }
+
+    public <T extends SuperDao> T getDao(DaoTypes daoType) {
+        switch (daoType) {
             case STUDENT:
-                return new StudentDaoImpl();
+                return (T) new StudentDaoImpl();
             case ROOM:
-                return new RoomDaoImpl();
+                return (T) new RoomDaoImpl();
             case RESERVATION:
-                return new ReservationDaoImpl();
+                return (T) new ReservationDaoImpl();
             case USER:
-                return new UserDaoImpl();
+                return (T) new UserDaoImpl();
             default:
                 return null;
         }

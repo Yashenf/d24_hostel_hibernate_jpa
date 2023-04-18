@@ -13,7 +13,7 @@ import java.util.Properties;
 
 public class FactoryConfiguration {
     private static FactoryConfiguration factoryConfiguration;
-    private final SessionFactory sessionFactory;
+    private  SessionFactory sessionFactory;
 
     private FactoryConfiguration() throws IOException {
 

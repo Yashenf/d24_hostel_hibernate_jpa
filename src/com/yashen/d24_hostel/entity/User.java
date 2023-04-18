@@ -15,10 +15,6 @@ import javax.persistence.Id;
 @Entity
 public class User implements SuperEntity{
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.IDENTITY
-    )
-    private int id;
     private String userName;
     private String mobileNumber;
     private String password;

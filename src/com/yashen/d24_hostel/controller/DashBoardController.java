@@ -2,22 +2,31 @@ package com.yashen.d24_hostel.controller;
 
 import com.yashen.d24_hostel.util.navigation.Navigation;
 import com.yashen.d24_hostel.util.enums.Routes;
+import com.yashen.d24_hostel.util.session_storage.SignedUser;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+
 import javafx.fxml.Initializable;
-import javafx.scene.Scene;
+
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.Stage;
-import javafx.stage.Window;
-import lombok.SneakyThrows;
+
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+
+import javafx.util.Duration;
 
 import java.io.IOException;
 import java.net.URL;
+
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 import java.util.ResourceBundle;
 
-public class DashBoardController {
+public class DashBoardController implements Initializable{
 
     @FXML
     private AnchorPane container;
@@ -63,9 +72,25 @@ public class DashBoardController {
     }
 
 
-    /*@Override
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Stage window = (Stage) containerPane.getScene().getWindow();
-        containerPane.getChildren().add(FXMLLoader.load(getClass().getResource("/com/yashen/d24_hostel/view/student/StudentForm.fxml")));
-    }*/
+        userNameLbl.setText(SignedUser.username);
+        setDate();
+        setTime();
+
+    }
+    private void setTime() {
+        Timeline time = new Timeline(
+                new KeyFrame(Duration.ZERO, event -> {
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss a");
+                    timeLbl.setText(LocalDateTime.now().format(formatter));
+
+                }), new KeyFrame(Duration.seconds(1)));
+        time.setCycleCount(Animation.INDEFINITE);
+        time.play();
+    }
+
+    private void setDate() {
+        dateLbl.setText(new SimpleDateFormat("yyyy:MM:dd").format(new Date()));
+    }
 }

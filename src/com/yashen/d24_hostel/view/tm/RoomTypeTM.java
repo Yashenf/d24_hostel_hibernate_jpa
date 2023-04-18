@@ -11,7 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class RoomTypeTM {
     private int no;
-    private RoomTypes roomType;
+    private int id;
+    private String roomType;
     private double keyMoney;
     private int qty;
     private int qtyOnHand;

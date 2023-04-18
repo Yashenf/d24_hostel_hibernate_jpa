@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class RoomDto {
-    private RoomType roomType;
+    private int id;
+    private String roomType;
     private double keyMoney;
     private int qty;
 }

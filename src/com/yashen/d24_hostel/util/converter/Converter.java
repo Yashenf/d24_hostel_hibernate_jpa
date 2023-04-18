@@ -17,7 +17,11 @@ public class Converter {
         Student student = new Student();
         student.setNic(studentDto.getNic());
         student.setStudentName(studentDto.getStudentName());
-        student.setGender(studentDto.getGender() == Gender.MALE ? "MALE" : "FEMALE");
+        if(studentDto.getGender().equals(Gender.MALE)){
+            student.setGender("MALE");
+        }else {
+            student.setGender("FEMALE");
+        }
         student.setMobileNo(studentDto.getMobileNo());
         student.setDob(studentDto.getDob());
         student.setAddress(studentDto.getAddress());
@@ -25,30 +29,31 @@ public class Converter {
     }
 
     public StudentDto convertToStudentDto(Student student){
-        StudentDto studentDto = new StudentDto();
-        studentDto.setNic(student.getNic());
-        studentDto.setStudentName(student.getStudentName());
-        studentDto.setGender(student.getGender().equalsIgnoreCase("MALE")?Gender.MALE:Gender.FEMALE);
-        studentDto.setMobileNo(student.getMobileNo());
-        studentDto.setDob(student.getDob());
-        studentDto.setAddress(student.getAddress());
-        return studentDto;
+        if (student != null){
+            System.out.println("---------  nic is -----"+student.getNic()+"----");
+            StudentDto studentDto = new StudentDto();
+            studentDto.setNic(student.getNic());
+            studentDto.setStudentName(student.getStudentName());
+            if(student.getGender().equals("MALE")){
+                studentDto.setGender(Gender.MALE);
+            }else {
+                studentDto.setGender(Gender.FEMALE);
+            }
+            studentDto.setMobileNo(student.getMobileNo());
+            studentDto.setDob(student.getDob());
+            studentDto.setAddress(student.getAddress());
+            return studentDto;
+        }else {
+            return null;
+        }
+
     }
 
     public Room convertToRoomEntity(RoomDto roomDto){
+        System.out.println("2002   "+", "+roomDto);
         Room room = new Room();
-        switch (roomDto.getRoomType()){
-            case ACNONFOOD:
-                room.setRoomType("A/C Non Foods");
-            case ACWITHFOOD:
-                room.setRoomType("A/C With Foods");
-            case NONACNONFOOD:
-                room.setRoomType("Non A/C Non Food");
-            case NONACWITHFOOD:
-                room.setRoomType("Non A/c With Food");
-            default:
-                room.setRoomType("Not Specified");
-        }
+        room.setRoomId(roomDto.getId());
+        room.setRoomType(roomDto.getRoomType());
         room.setQty(roomDto.getQty());
         room.setKeyMoney(roomDto.getKeyMoney());
         return room;
@@ -56,18 +61,8 @@ public class Converter {
 
     public RoomDto convertToRoomDto(Room room){
         RoomDto roomDto = new RoomDto();
-        switch (room.getRoomType()){
-            case "A/C Non Foods":
-                roomDto.setRoomType(RoomType.ACNONFOOD);
-            case "A/C With Foods":
-                roomDto.setRoomType(RoomType.ACWITHFOOD);
-            case "Non A/C Non Food":
-                roomDto.setRoomType(RoomType.NONACNONFOOD);
-            case "Non A/c With Food":
-                roomDto.setRoomType(RoomType.NONACWITHFOOD);
-            default:
-                roomDto.setRoomType(RoomType.NONACNONFOOD);
-        }
+        roomDto.setId(room.getRoomId());
+        roomDto.setRoomType(room.getRoomType());
         roomDto.setKeyMoney(room.getKeyMoney());
         roomDto.setQty(room.getQty());
         return roomDto;
@@ -76,17 +71,19 @@ public class Converter {
     public Reservation convertToReservationEntity(ReservationDto reservationDto){
         Reservation reservation = new Reservation();
         reservation.setDate(reservationDto.getDate());
-        reservation.setRoom(reservationDto.getRoom());
-        reservation.setStudent(reservationDto.getStudent());
+        System.out.println(reservationDto);
+        reservation.setRoom(convertToRoomEntity(reservationDto.getRoom()));
+        reservation.setStudent(convertToStudentEntity(reservationDto.getStudent()));
         reservation.setStatus(reservationDto.getStatus());
         return reservation;
     }
 
     public ReservationDto convertToReservationDto(Reservation reservation){
         ReservationDto reservationDto = new ReservationDto();
+        reservationDto.setId(reservation.getResId());
         reservationDto.setDate(reservation.getDate());
-        reservationDto.setRoom(reservation.getRoom());
-        reservationDto.setStudent(reservation.getStudent());
+        reservationDto.setRoom(convertToRoomDto(reservation.getRoom()));
+        reservationDto.setStudent(convertToStudentDto(reservation.getStudent()));
         reservationDto.setStatus(reservation.getStatus());
         return reservationDto;
     }
@@ -100,10 +97,14 @@ public class Converter {
     }
 
     public UserDto convertToUserDto(User user){
-        UserDto userDto = new UserDto();
-        userDto.setUserName(user.getUserName());
-        userDto.setPassword(user.getPassword());
-        userDto.setMobileNumber(user.getMobileNumber());
-        return userDto;
+        if (user != null){
+            UserDto userDto = new UserDto();
+            userDto.setUserName(user.getUserName());
+            userDto.setPassword(user.getPassword());
+            userDto.setMobileNumber(user.getMobileNumber());
+            return userDto;
+        }
+        return null;
+
     }
 }

@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class RoomDaoImpl implements RoomDao {
@@ -15,7 +16,8 @@ public class RoomDaoImpl implements RoomDao {
         boolean isSuccess = true;
         try {
             Transaction transaction = session.beginTransaction();
-            session.save(room);
+            int id = (int) session.save(room);
+            room.setRoomId(id);
             transaction.commit();
         } catch (Exception e) {
             isSuccess = false;
@@ -82,5 +84,25 @@ public class RoomDaoImpl implements RoomDao {
         } finally {
             session.close();
         }
+    }
+
+    @Override
+    public boolean updateQty(Session session, Transaction transaction, int id, int qty) {
+        try {
+            String hql= "UPDATE Room SET qty= :qty WHERE roomId=:id";
+            Query query = session.createQuery(hql);
+            query.setParameter("qty",qty);
+            query.setParameter("id",id);
+            int i = query.executeUpdate();
+            transaction.commit();
+            return i>0;
+        }catch (Exception e){
+            e.printStackTrace();
+            transaction.rollback();
+        }finally {
+            session.close();
+        }
+        return false;
+
     }
 }

@@ -12,21 +12,17 @@
    <children>
       <Text layoutX="105.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Update Student" />
       <TextField fx:id="studentFirstNameTxt" layoutX="11.0" layoutY="47.0" prefHeight="25.0" prefWidth="115.0" promptText="First Name" />
-      <TextField fx:id="studentNictXT" layoutX="12.0" layoutY="80.0" prefHeight="25.0" prefWidth="271.0" promptText="NIC" />
+      <TextField fx:id="studentNictXT" disable="true" layoutX="12.0" layoutY="80.0" prefHeight="25.0" prefWidth="271.0" promptText="NIC" />
       <TextField fx:id="studentAddressTxt" layoutX="11.0" layoutY="188.0" prefHeight="25.0" prefWidth="280.0" promptText="Address (City)" />
       <TextField fx:id="studentMobileNoTxt" layoutX="174.0" layoutY="118.0" prefHeight="25.0" prefWidth="115.0" promptText="Mobile" />
-      <RadioButton fx:id="MaleRbtn" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="56.0" selected="true" text="Male">
+      <RadioButton fx:id="MaleRbtn" layoutX="10.0" layoutY="121.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="56.0" text="Male">
          <toggleGroup>
-            <ToggleGroup fx:id="gender" />
-         </toggleGroup>
-      </RadioButton>
-      <RadioButton fx:id="femaleRbtn" layoutX="78.0" layoutY="121.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" text="Female">
-         <toggleGroup>
-            <ToggleGroup fx:id="gender" />
-         </toggleGroup>
+            <ToggleGroup fx:id="genderType" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="femaleRbtn" layoutX="78.0" layoutY="121.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="71.0" text="Female" toggleGroup="$genderType">
       </RadioButton>
       <Button layoutX="79.0" layoutY="221.0" mnemonicParsing="false" onAction="#updateStudentBtnOnAction" prefHeight="25.0" prefWidth="145.0" text="Update" />
-      <DatePicker layoutX="8.0" layoutY="151.0" prefHeight="25.0" prefWidth="280.0" promptText="date Of Birth" />
+      <DatePicker fx:id="dobPkr" layoutX="8.0" layoutY="151.0" prefHeight="25.0" prefWidth="280.0" promptText="date Of Birth" />
       <TextField fx:id="studentLastNameTxt1" layoutX="147.0" layoutY="45.0" prefHeight="25.0" prefWidth="115.0" promptText="Last Name" />
    </children>
 </AnchorPane>

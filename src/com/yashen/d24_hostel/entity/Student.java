@@ -27,7 +27,8 @@ public class Student implements SuperEntity{
     private String address;
 
     @OneToMany(
-            mappedBy = "student"
+            mappedBy = "student",
+            fetch = FetchType.EAGER
     )
     private List<Reservation> reserveList;
 }

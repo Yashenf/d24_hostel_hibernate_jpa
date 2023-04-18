@@ -17,9 +17,6 @@ public class Room implements SuperEntity{
             strategy = GenerationType.IDENTITY
     )
     private int roomId;
-    @Enumerated(
-            EnumType.STRING
-    )
     private String roomType;
     private double keyMoney;
     private int qty;

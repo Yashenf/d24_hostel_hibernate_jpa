@@ -12,7 +12,10 @@ import java.time.LocalDate;
 @ToString
 @Entity
 public class Reservation implements SuperEntity {
-    @Id
+    @Id()
+    @GeneratedValue(
+            strategy = GenerationType.IDENTITY
+    )
     private int resId;
     private LocalDate date;
     @ManyToOne()

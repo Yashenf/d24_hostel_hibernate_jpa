@@ -11,8 +11,9 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @Data
 public class ReservationDto {
+    private int id;
     private LocalDate date;
-    private Student student;
-    private Room room;
+    private StudentDto student;
+    private RoomDto room;
     private String status;
 }

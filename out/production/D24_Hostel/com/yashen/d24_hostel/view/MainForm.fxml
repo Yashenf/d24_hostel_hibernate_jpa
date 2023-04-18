@@ -41,11 +41,6 @@
       </ImageView>
       <Text fill="WHITE" layoutX="14.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="Developed by yashen's company" wrappingWidth="205.99999255500734" />
       <Text fill="WHITE" layoutX="14.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="V 1.0.0 Snapshot" wrappingWidth="141.99220275878906" />
-      <Text fill="#f4f5f5" layoutX="398.0" layoutY="305.0" onMouseClicked="#fogotPasswordOnAction" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 12px;" text="Fogot Password" wrappingWidth="105.13672199845314">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
       <TextField fx:id="usernameTxt" layoutX="283.0" layoutY="139.0" onAction="#usernameTxtOnAction" prefHeight="26.0" prefWidth="206.0" promptText="Username" />
    </children>
 </AnchorPane>
